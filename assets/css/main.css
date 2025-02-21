@@ -3081,7 +3081,7 @@ input, select, textarea {
 				background-image: url("../../images/bg.jpg");
 				background-position: left;
 				background-repeat: no-repeat;
-				background-size: cover;
+				background-size: contain;
 				bottom: auto;
 				left: auto;
 				padding: 4em 4em 6em 4em;
