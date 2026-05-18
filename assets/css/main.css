@@ -3081,7 +3081,10 @@ input, select, textarea {
 
 			#header {
 				background-attachment: scroll;
+				background-color: #000000;
+				background-image: url("../../images/bg.jpg");
 				background-position: center center;
+				background-repeat: no-repeat;
 				background-size: cover;
 				left: auto;
 				padding: 6em 4em;
