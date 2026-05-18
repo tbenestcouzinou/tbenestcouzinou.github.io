@@ -2617,7 +2617,7 @@ input, select, textarea {
 		width: 35%;
 		height: 100vh;
 		background: url("../../images/bg.jpg") center/cover no-repeat;
-		z-index: -10;
+		z-index: -100;
 		pointer-events: none;
 		}
 
