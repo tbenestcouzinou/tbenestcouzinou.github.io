@@ -2633,6 +2633,8 @@ input, select, textarea {
 			-moz-flex-grow: 1;
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
+			position: relative;
+			z-index: 1;
 			flex-grow: 1;
 			margin: 0 0 2em 0;
 		}
