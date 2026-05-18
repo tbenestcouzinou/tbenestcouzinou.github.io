@@ -2591,10 +2591,10 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
-		/* background-attachment: fixed; */
+		background-color: #000000;
+		background-attachment: fixed;
 		background-image: url("../../images/bg.jpg");
-		background-position: -50%;
+		background-position: left;
 		background-repeat: no-repeat;
 		background-size: cover;
 		color: rgba(255, 255, 255, 0.5);
@@ -2605,8 +2605,21 @@ input, select, textarea {
 		text-align: right;
 		top: 0;
 		width: 35%;
-    	z-index: 20;
+		z-index: 0;
+		pointer-events: none;
 	}
+	
+		#header::before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 35%;
+		height: 100vh;
+		background: url("../../images/bg.jpg") center/cover no-repeat;
+		z-index: 0;
+		pointer-events: none;
+		}
 
 		#header > * {
 			-moz-flex-shrink: 0;
