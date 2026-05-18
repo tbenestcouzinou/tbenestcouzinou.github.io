@@ -3053,7 +3053,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-attachment: scroll;
+				background-attachment: fixed;
 				background-position: top left, center center;
 				background-size: auto,		cover;
 				left: auto;
