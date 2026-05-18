@@ -2702,6 +2702,7 @@ input, select, textarea {
 				background-repeat: no-repeat;
 				background-size: cover;
 				background-attachment: fixed;
+				bottom: 0;
 				left: 0;
 				padding: 0 4em 4em 4em;
 				position: fixed;
