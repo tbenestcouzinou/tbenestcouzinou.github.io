@@ -54,7 +54,10 @@ blockquote, q {
 		left: 0;
 		width: 35%;
 		height: 100vh;
-		background: none;
+		background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		background-attachment: fixed;
 		pointer-events: none;
 		z-index: 0;
@@ -2618,7 +2621,7 @@ input, select, textarea {
 		top: 0;
 		width: 35%;
 		box-sizing: border-box;
-		z-index: 3;
+		z-index: 2;
 	}
 
 		#header > * {
@@ -2694,7 +2697,11 @@ input, select, textarea {
 			}
 
 			#footer {
-				background: none;
+				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-attachment: fixed;
 				left: 0;
 				padding: 0 4em 4em 4em;
 				position: fixed;
