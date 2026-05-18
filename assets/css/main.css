@@ -31,7 +31,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	--bg-dark: 0.35;}
+	--bg-dark: 0.35;
+}
 
 ol, ul {
 	list-style: none;
@@ -53,8 +54,8 @@ blockquote, q {
 		left: 0;
 		width: 35%;
 		height: 100vh;
-		background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))),
-			url("../../images/bg.jpg");
+		background-color: #000000;
+		background-image: url("../../images/bg.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -2657,6 +2658,25 @@ input, select, textarea {
 			width: 6.25em;
 		}
 
+/* Dark toggle button */
+#darkToggle, .dark-toggle {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 3;
+	background: rgba(255,255,255,0.06);
+	color: #ffffff;
+	border: none;
+	padding: 0.45em 0.6em;
+	border-radius: 0.35em;
+	cursor: pointer;
+	font-size: 0.95em;
+}
+
+body.dark {
+	--bg-dark: 0.6;
+}
+
 /* Footer */
 
 	#footer .icons {
@@ -3081,8 +3101,7 @@ input, select, textarea {
 
 			#header {
 				background-attachment: scroll;
-				background-color: #000000;
-				background-image: url("../../images/bg.jpg");
+				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: cover;
@@ -3111,8 +3130,7 @@ input, select, textarea {
 
 			#footer {
 				background-attachment: scroll;
-				background-color: #000000;
-				background-image: url("../../images/bg.jpg");
+				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
 				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: cover;
