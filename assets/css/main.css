@@ -2605,7 +2605,7 @@ input, select, textarea {
 		text-align: right;
 		top: 0;
 		width: 35%;
-		z-index: 10;
+		z-index: 0;
 		pointer-events: none;
 	}
 	
