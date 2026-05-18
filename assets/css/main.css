@@ -31,7 +31,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	--bg-dark: 0.35;
+	--bg-dark: 0.5;
 }
 
 ol, ul {
