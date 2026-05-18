@@ -2592,34 +2592,20 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 		background-color: #000000;
-		/* background-attachment: fixed;
 		background-image: url("../../images/bg.jpg");
-		background-position: left;
+		background-position: center center;
 		background-repeat: no-repeat;
-		background-size: cover; */
+		background-size: cover;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
 		padding: 8em 4em;
-		/* position: fixed; */
+		position: fixed;
 		text-align: right;
 		top: 0;
 		width: 35%;
 		z-index: 2;
-		pointer-events: auto;
 	}
-	
-		#header::before {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 35%;
-		height: 100vh;
-		background: url("../../images/bg.jpg") center/cover no-repeat;
-		z-index: 0;
-		pointer-events: none;
-		}
 
 		#header > * {
 			-moz-flex-shrink: 0;
@@ -2633,8 +2619,6 @@ input, select, textarea {
 			-moz-flex-grow: 1;
 			-webkit-flex-grow: 1;
 			-ms-flex-grow: 1;
-			position: relative;
-			z-index: 1;
 			flex-grow: 1;
 			margin: 0 0 2em 0;
 		}
@@ -2693,6 +2677,21 @@ input, select, textarea {
 
 			#footer .copyright li a {
 				color: inherit;
+			}
+
+			#footer {
+				background-color: #000000;
+				background-image: url("../../images/bg.jpg");
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				bottom: 0;
+				left: 0;
+				padding: 0 4em 4em 4em;
+				position: fixed;
+				text-align: right;
+				width: 35%;
+				z-index: 2;
 			}
 
 /* Main */
@@ -3069,9 +3068,9 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				background-attachment: fixed;
-				background-position: top left, center center;
-				background-size: auto,		auto;
+				background-attachment: scroll;
+				background-position: center center;
+				background-size: cover;
 				left: auto;
 				padding: 6em 4em;
 				position: relative;
@@ -3079,10 +3078,6 @@ input, select, textarea {
 				top: auto;
 				width: 100%;
 				display: block;
-			}
-
-			#header::before {
-				display: none;
 			}
 
 				#header h1 {
@@ -3096,12 +3091,12 @@ input, select, textarea {
 		/* Footer */
 
 			#footer {
-				background-attachment: fixed;
+				background-attachment: scroll;
 				background-color: #000000;
 				background-image: url("../../images/bg.jpg");
-				background-position: -50%;
+				background-position: center center;
 				background-repeat: no-repeat;
-				background-size: 100% contain;
+				background-size: cover;
 				bottom: auto;
 				left: auto;
 				padding: 4em 4em 6em 4em;
