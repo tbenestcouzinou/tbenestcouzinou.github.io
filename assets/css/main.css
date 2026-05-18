@@ -2594,9 +2594,9 @@ input, select, textarea {
 		background-color: #1f1815;
 		background-attachment: fixed;
 		background-image: url("../../images/bg.jpg");
-		background-position: left;
+		background-position: -50%;
 		background-repeat: no-repeat;
-		background-size: 100% contain;
+		background-size: cover;
 		color: rgba(255, 255, 255, 0.5);
 		height: 100%;
 		left: 0;
@@ -2605,6 +2605,7 @@ input, select, textarea {
 		text-align: right;
 		top: 0;
 		width: 35%;
+    	z-index: 20;
 	}
 
 		#header > * {
