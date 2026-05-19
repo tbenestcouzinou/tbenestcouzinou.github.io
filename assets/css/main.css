@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 	--bg-dark: 0.65;
 	--sidebar-width: 35%;
-	--bg-position-x: -30%;
+	--bg-position-x: 30%;
 }
 
 ol, ul {
@@ -3083,7 +3083,7 @@ input, select, textarea {
 			#header {
 				background-attachment: scroll;
 				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
-				background-position: -30% center;
+				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: cover;
 				left: auto;
@@ -3112,7 +3112,7 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
-				background-position: -30% center;
+				background-position: center center;
 				background-repeat: no-repeat;
 				background-size: cover;
 				bottom: auto;
