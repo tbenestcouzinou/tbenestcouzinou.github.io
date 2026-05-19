@@ -3083,7 +3083,7 @@ input, select, textarea {
 			#header {
 				background-attachment: scroll;
 				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
-				background-position: center center;
+				background-position: -30% center;
 				background-repeat: no-repeat;
 				background-size: cover;
 				left: auto;
@@ -3112,7 +3112,7 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
-				background-position: center center;
+				background-position: -30% center;
 				background-repeat: no-repeat;
 				background-size: cover;
 				bottom: auto;
@@ -3252,23 +3252,3 @@ input, select, textarea {
 			}
 
 	}
-
-/* Force desktop: use only body::before for sidebar background and neutralize header/footer */
-@media screen and (min-width: 981px) {
-
-	body::before {
-		background-position: var(--bg-position-x) center !important;
-		background-attachment: fixed !important;
-		display: block !important;
-	}
-
-	/* Ensure header/footer don't reapply their own backgrounds */
-	#header,
-	#footer {
-		background: transparent !important;
-		background-image: none !important;
-		background-position: unset !important;
-		background-attachment: unset !important;
-	}
-
-}
