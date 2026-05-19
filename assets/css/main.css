@@ -32,7 +32,6 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	--bg-dark: 0.65;
-	--sidebar-width: 35%;
 }
 
 ol, ul {
@@ -53,7 +52,7 @@ blockquote, q {
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: var(--sidebar-width);
+		width: 35%;
 		height: 100vh;
 		background: linear-gradient(rgba(0,0,0,var(--bg-dark)), rgba(0,0,0,var(--bg-dark))), url("../../images/bg.jpg");
 		background-position: center center;
@@ -2617,7 +2616,7 @@ input, select, textarea {
 		position: fixed;
 		text-align: right;
 		top: 0;
-		width: var(--sidebar-width);
+		width: 35%;
 		box-sizing: border-box;
 		z-index: 2;
 	}
@@ -2701,7 +2700,7 @@ input, select, textarea {
 				padding: 0 4em 4em 4em;
 				position: fixed;
 				text-align: right;
-				width: var(--sidebar-width);
+				width: 35%;
 				box-sizing: border-box;
 				z-index: 2;
 			}
@@ -2709,21 +2708,10 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: var(--sidebar-width);
+		margin-left: 35%;
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
-		width: calc(100% - var(--sidebar-width));
-	}
-
-	@media screen and (min-width: 981px) {
-		#header,
-		#footer {
-			background: transparent !important;
-		}
-
-		body::before {
-			display: block;
-		}
+		width: calc(100% - 35%);
 	}
 
 		#main > section {
@@ -3032,14 +3020,11 @@ input, select, textarea {
 
 	@media screen and (max-width: 1280px) {
 
-		body {
-			--sidebar-width: 30%;
-		}
-
 		/* Header */
 
 			#header {
 				padding: 6em 3em 3em 3em;
+				width: 30%;
 			}
 
 				#header h1 {
@@ -3067,8 +3052,10 @@ input, select, textarea {
 		/* Main */
 
 			#main {
+				margin-left: 30%;
 				max-width: none;
 				padding: 6em 3em 3em 3em;
+				width: calc(100% - 30%);
 			}
 
 	}
