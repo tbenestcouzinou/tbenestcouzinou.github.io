@@ -115,6 +115,37 @@
 			});
 		})();
 
+	// Mobile menu: close when clicking outside or pressing Escape.
+		(function() {
+			var $mobileNav = $('#menu-header .mobile-nav');
+
+			if (!$mobileNav.length) {
+				return;
+			}
+
+			$(document).on('click', function(event) {
+				if (!$mobileNav.is('[open]')) {
+					return;
+				}
+
+				if ($(event.target).closest('#menu-header .mobile-nav').length) {
+					return;
+				}
+
+				$mobileNav.removeAttr('open');
+			});
+
+			$mobileNav.find('a').on('click', function() {
+				$mobileNav.removeAttr('open');
+			});
+
+			$(document).on('keydown', function(event) {
+				if (event.key === 'Escape') {
+					$mobileNav.removeAttr('open');
+				}
+			});
+		})();
+
 	// Footer.
 		breakpoints.on('<=medium', function() {
 			$footer.insertAfter($main);
