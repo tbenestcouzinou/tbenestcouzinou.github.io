@@ -38,26 +38,21 @@
 		<!-- Menu header
 		================================================== -->
 		<header id="menu-header">
-
-			<div class="row">
-
-				<nav id="nav-wrap">         
-					
-					<a class="mobile-btn" href="#nav-wrap" title="Show navigation">
+			<div class="mobile-menu">
+				<details class="mobile-nav">
+					<summary class="mobile-nav-toggle" aria-label="Open navigation menu">
 						<span class="menu-icon">Menu</span>
-					</a>
-					<a class="mobile-btn" href="#" title="Hide navigation">
-						<span class="menu-icon">Menu</span>
-					</a> 
-
-					<ul id="nav" class="nav">
-						<li><a class="smoothscroll" href="#header">About me</a></li>
-						<li class="current"><a class="smoothscroll" href="#one">Works.</a></li>
-					</ul> <!-- end #nav -->
-
-				</nav> <!-- end #nav-wrap -->
-
-
+					</summary>
+					<div class="mobile-nav-panel">
+						<ul class="mobile-nav-links">
+							<li><a class="smoothscroll" href="#one">About me</a></li>
+							<li><a class="smoothscroll" href="#two">Works</a></li>
+						</ul>
+						<button type="button" class="darkmode-toggle mobile-darkmode" data-theme-toggle aria-label="Enable dark mode">
+							<span class="icon solid fa-moon" aria-hidden="true"></span>
+						</button>
+					</div>
+				</details>
 			</div>
 
 		</header> <!-- end header -->
@@ -196,8 +191,7 @@
 
 						</div>
 						
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>-->
+						
 					</section>
 
 

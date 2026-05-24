@@ -11,6 +11,7 @@
 		$header = $('#header'),
 		$footer = $('#footer'),
 		$main = $('#main'),
+		$themeToggleButtons = $('[data-theme-toggle]'),
 		settings = {
 
 			// Parallax background effect?
@@ -49,6 +50,70 @@
 				}, 0);
 
 		}
+
+	// Theme toggle (desktop + mobile).
+		(function() {
+			var storageKey = 'theme';
+			var darkClass = 'dark-mode';
+
+			function getStoredTheme() {
+				try {
+					return window.localStorage.getItem(storageKey);
+				} catch (error) {
+					return null;
+				}
+			}
+
+			function setStoredTheme(theme) {
+				try {
+					window.localStorage.setItem(storageKey, theme);
+				} catch (error) {
+					// Ignore storage failures.
+				}
+			}
+
+			function isDarkModeEnabled() {
+				return $body.hasClass(darkClass);
+			}
+
+			function refreshToggleButtons() {
+				var enabled = isDarkModeEnabled();
+				var ariaLabel = enabled ? 'Disable dark mode' : 'Enable dark mode';
+
+				$themeToggleButtons.each(function() {
+					var $button = $(this);
+					$button.attr('aria-pressed', enabled ? 'true' : 'false');
+					$button.attr('aria-label', ariaLabel);
+				});
+			}
+
+			function applyTheme(theme) {
+				var isDark = theme === 'dark';
+
+				$body.toggleClass(darkClass, isDark);
+				setStoredTheme(theme);
+				refreshToggleButtons();
+			}
+
+			function getPreferredTheme() {
+				var storedTheme = getStoredTheme();
+				if (storedTheme === 'dark' || storedTheme === 'light') {
+					return storedTheme;
+				}
+
+				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+					return 'dark';
+				}
+
+				return 'light';
+			}
+
+			applyTheme(getPreferredTheme());
+
+			$themeToggleButtons.on('click', function() {
+				applyTheme(isDarkModeEnabled() ? 'light' : 'dark');
+			});
+		})();
 
 	// Footer.
 		breakpoints.on('<=medium', function() {
