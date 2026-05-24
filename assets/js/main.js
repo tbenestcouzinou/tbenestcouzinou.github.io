@@ -146,6 +146,154 @@
 			});
 		})();
 
+	// Works section: load ADS articles from JSON and render them once.
+		(function() {
+			var $worksList = $('#works-list');
+
+			if (!$worksList.length) {
+				return;
+			}
+
+			function escapeText(value) {
+				return String(value)
+					.replace(/&/g, '&amp;')
+					.replace(/</g, '&lt;')
+					.replace(/>/g, '&gt;')
+					.replace(/"/g, '&quot;')
+					.replace(/'/g, '&#39;');
+			}
+
+			function firstText(value) {
+				if (Array.isArray(value)) {
+					return firstText(value[0]);
+				}
+
+				if (value === null || value === undefined) {
+					return '';
+				}
+
+				return String(value).trim();
+			}
+
+			function previewText(text, maxLength) {
+				var limit = maxLength || 280;
+				var normalized = firstText(text).replace(/\s+/g, ' ');
+
+				if (!normalized) {
+					return 'Abstract unavailable in ADS.';
+				}
+
+				if (normalized.length <= limit) {
+					return normalized;
+				}
+
+				var slice = normalized.slice(0, limit);
+				var lastSpace = slice.lastIndexOf(' ');
+				return slice.slice(0, lastSpace > 0 ? lastSpace : limit).trim() + '...';
+			}
+
+			function formatDate(value) {
+				var parsedDate = new Date(value);
+
+				if (Number.isNaN(parsedDate.getTime())) {
+					return firstText(value) || 'Date unavailable';
+				}
+
+				return new Intl.DateTimeFormat('en-GB', {
+					day: '2-digit',
+					month: 'long',
+					year: 'numeric'
+				}).format(parsedDate);
+			}
+
+			function pickUrl(article) {
+				if (article.doi) {
+					return 'https://doi.org/' + article.doi;
+				}
+
+				if (article.bibcode) {
+					return 'https://ui.adsabs.harvard.edu/abs/' + encodeURIComponent(article.bibcode) + '/abstract';
+				}
+
+				return 'https://ui.adsabs.harvard.edu/';
+			}
+
+			function renderArticle(article) {
+				var title = firstText(article.title) || 'Untitled article';
+				var authors = Array.isArray(article.author) ? article.author.map(function(author) {
+					return firstText(author);
+				}).filter(Boolean).join(', ') : firstText(article.author);
+				var journal = firstText(article.pub) || 'ADS record';
+				var abstract = firstText(article.abstract) || 'Abstract unavailable in ADS.';
+
+				var $article = $('<article>', {class: 'col-6 col-12-xsmall work-item'});
+				var $link = $('<a>', {
+					href: pickUrl(article),
+					target: '_blank',
+					rel: 'noopener noreferrer'
+				}).text(title);
+				var $meta = $('<h4>', {class: 'work-meta'}).text(journal + ' · ' + formatDate(article.date));
+				var $toggle = $('<button>', {
+					type: 'button',
+					class: 'readmore-btn js-toggle-abstract',
+					'aria-expanded': 'false'
+				}).text('Read abstract');
+				var $wrapper = $('<div>', {class: 'text-wrapper'});
+				var $preview = $('<p>', {class: 'abstract-preview'}).text(previewText(abstract));
+				var $full = $('<p>', {class: 'abstract-full', hidden: true}).text(abstract);
+
+				$article.append($link);
+				$article.append($('<h3>').text(authors || 'Author unavailable'));
+				$article.append($meta);
+				$wrapper.append($preview, $full);
+				$article.append($toggle);
+				$article.append($wrapper);
+
+				return $article;
+			}
+
+			function setLoadingMessage(message) {
+				$worksList.empty().append($('<p>', {class: 'works-loading'}).text(message));
+			}
+
+			$(document).on('click', '.js-toggle-abstract', function(event) {
+				event.preventDefault();
+
+				var $button = $(this);
+				var $workItem = $button.closest('.work-item');
+				var $preview = $workItem.find('.abstract-preview');
+				var $full = $workItem.find('.abstract-full');
+				var isHidden = $full.prop('hidden');
+
+				$full.prop('hidden', !isHidden);
+				$preview.prop('hidden', isHidden);
+				$button.text(isHidden ? 'Hide abstract' : 'Read abstract');
+				$button.attr('aria-expanded', isHidden ? 'true' : 'false');
+			});
+
+			setLoadingMessage('Loading the latest ADS articles...');
+
+			$.getJSON($worksList.data('worksSource') || 'data/ads-works.json')
+				.done(function(payload) {
+					var articles = Array.isArray(payload && payload.articles) ? payload.articles : [];
+					var $fragment = $(document.createDocumentFragment());
+
+					if (!articles.length) {
+						setLoadingMessage('No ADS articles found yet.');
+						return;
+					}
+
+					articles.forEach(function(article) {
+						$fragment.append(renderArticle(article));
+					});
+
+					$worksList.empty().append($fragment);
+				})
+				.fail(function() {
+					setLoadingMessage('Unable to load ADS articles right now.');
+				});
+		})();
+
 	// Footer.
 		breakpoints.on('<=medium', function() {
 			$footer.insertAfter($main);

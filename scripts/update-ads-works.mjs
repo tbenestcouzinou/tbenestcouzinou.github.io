@@ -1,9 +1,8 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const indexPath = path.join(repoRoot, 'index.html');
 const dataPath = path.join(repoRoot, 'data', 'ads-works.json');
 
 const ADS_ENDPOINT = 'https://api.adsabs.harvard.edu/v1/search/query';
@@ -172,16 +171,6 @@ async function fetchAdsArticles({ token, query, rows }) {
 	return records;
 }
 
-function buildWorksBlock(records) {
-	if (!records.length) {
-		throw new Error('ADS returned no records, leaving the site unchanged would be safer than publishing an empty Works section.');
-	}
-
-	const articles = records.map((record, index) => indentBlock(renderArticle(record, index), '\t\t\t\t\t\t\t')).join('\n');
-
-	return [MARKER_START, articles, MARKER_END].join('\n');
-}
-
 async function main() {
 	const token = process.env.ADS_API_TOKEN;
 	if (!token) {
@@ -218,17 +207,6 @@ async function main() {
 		)}\n`,
 		'utf8',
 	);
-
-	const indexContent = await readFile(indexPath, 'utf8');
-	const replacement = buildWorksBlock(records);
-	const pattern = new RegExp(`${MARKER_START}[\\s\\S]*?${MARKER_END}`);
-
-	if (!pattern.test(indexContent)) {
-		throw new Error('Could not find the ADS Works markers in index.html.');
-	}
-
-	const nextIndexContent = indexContent.replace(pattern, replacement);
-	await writeFile(indexPath, nextIndexContent, 'utf8');
 
 	console.log(`Updated Works section with ${records.length} ADS articles.`);
 }

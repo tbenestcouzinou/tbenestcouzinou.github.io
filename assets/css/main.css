@@ -2629,6 +2629,24 @@ input, select, textarea {
 			margin: 0 0 0.75em 0;
 		}
 
+		.work-item .readmore-btn {
+			color: #2E2EFF;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 0.8em;
+			font-weight: 600;
+			margin: 0 0 0.75em 0;
+		}
+
+		.work-item .text-wrapper {
+			font-size: 0.8em;
+			line-height: 1.55em;
+		}
+
+		.work-item .text-wrapper p {
+			margin: 0;
+		}
+
 		.work-item p {
 			font-size: 0.8em;
 			line-height: 1.5em;
