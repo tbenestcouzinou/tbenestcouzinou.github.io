@@ -1,6 +1,118 @@
 {
-  "generatedAt": null,
-  "query": "",
-  "count": 0,
-  "articles": []
+  "generatedAt": "2026-05-24T15:44:27.403Z",
+  "query": "author:\"Benest Couzinou\" AND property:refereed AND (database:astronomy OR database:physics)",
+  "count": 6,
+  "articles": [
+    {
+      "bibcode": "2026PSJ.....7...41M",
+      "title": "Formation and Survival of Complex Organic Molecules in the Jovian Circumplanetary Disk",
+      "author": [
+        "Mousis, Olivier",
+        "Petetin, Clément",
+        "Benest Couzinou, Tom",
+        "Schneeberger, Antoine",
+        "Bennacer, Yannis"
+      ],
+      "abstract": "Europa, Ganymede, and Callisto are key targets in the search for habitability due to the potential presence of subsurface oceans. Detecting complex organic molecules (COMs), essential for prebiotic chemistry, is crucial to assessing their potential. Though COMs remain undetected on these moons, ESA's Jupiter Icy Moons Explorer (JUICE) and NASA's Europa Clipper missions aim to fill this gap with their science payloads. This study explores the formation and transport of COMs within Jupiter's circumplanetary disk (CPD), a critical environment for the formation of the Galilean moons. Using a time-dependent model that couples the evolving CPD structure with the dynamics of icy particles of varying sizes and release times, we assess two primary COM-formation pathways: thermal processing of ices and UV photochemistry. The results indicate that heating, particularly of NH<SUB>3</SUB>:CO<SUB>2</SUB> ices, occurs efficiently before substantial irradiation, making it the dominant pathway for COM formation in the Jovian CPD. However, the relative efficiencies of these two processes are governed by particle density, disk viscosity, accretion rate, and UV flux, which collectively determine drift timescales and exposure to favorable thermodynamic environments. Existing models indicate that Europa's accretion was relatively cold and prolonged, possibly allowing some COMs to survive incorporation, whereas Ganymede and Callisto likely formed under even cooler conditions conducive to preserving COM-rich material. These results highlight the potential inheritance of complex organics by the Galilean moons and offer a framework for interpreting upcoming compositional data from JUICE and Europa Clipper.",
+      "pub": "The Planetary Science Journal",
+      "date": "2026-02-01T00:00:00Z",
+      "year": "2026",
+      "month": "",
+      "doi": "10.3847/PSJ/ae3559"
+    },
+    {
+      "bibcode": "2026MNRAS.545f2074B",
+      "title": "Delivery of complex organic molecules to the system of Jupiter",
+      "author": [
+        "Benest Couzinou, Tom",
+        "Amsler Moulanier, Alizée",
+        "Mousis, Olivier"
+      ],
+      "abstract": "Complex organic molecules are key markers of molecular diversity, and their formation conditions in protoplanetary discs remain an active area of research. These molecules have been detected on a variety of celestial bodies, including icy moons, and may play a crucial role in shaping the current composition of the Galilean moons. Experimental studies suggest that their formation could result from ultraviolet (UV) irradiation or thermal processing of NH<inline-formula><tex-math>$_3$</tex-math></inline-formula>:CO<inline-formula><tex-math>$_2$</tex-math></inline-formula> ices. In this context, we investigate the formation of complex organic molecules in the protosolar nebula and their subsequent transport to the Jupiter system region. Lagrangian transport and irradiation simulations of 500 individual particles are performed using a two-dimensional disc evolution model. Based on experiments with UV irradiation and thermal processing of CO<inline-formula><tex-math>$_2$</tex-math></inline-formula>:NH<inline-formula><tex-math>$_3$</tex-math></inline-formula> ice, this model allows us to estimate the estimate the potential for the formation of complex organic molecules through these processes. Almost none of the particles released at a local temperature of 20 K (corresponding to <inline-formula><tex-math>$\\sim$</tex-math></inline-formula>12 au from the Sun) reach the location of the system of Jupiter. However, when released at a local temperature of 80 K (<inline-formula><tex-math>$\\sim$</tex-math></inline-formula>7 au), approximately 45 per cent of the centimetric particles and 30 per cent of the micrometric particles can form complex organic molecules via thermal processing, subsequently reaching the location of the system of Jupiter within 300 kyr. Assuming that the Galilean moons formed in a cold circumplanetary disc around Jupiter, the nitrogen-bearing species potentially present in their interiors could have originated from the formation of complex organic molecules in the protosolar nebula.",
+      "pub": "Monthly Notices of the Royal Astronomical Society",
+      "date": "2026-01-01T00:00:00Z",
+      "year": "2026",
+      "month": "",
+      "doi": "10.1093/mnras/staf2074"
+    },
+    {
+      "bibcode": "2025ApJ...983L..12M",
+      "title": "Primordial Origin of Methane on Eris and Makemake Supported by D/H Ratios",
+      "author": [
+        "Mousis, Olivier",
+        "Werlen, Aaron",
+        "Benest Couzinou, Tom",
+        "Schneeberger, Antoine"
+      ],
+      "abstract": "Deuterium, a heavy isotope of hydrogen, is a key tracer of the formation of the solar system. Recent James Webb Space Telescope observations have expanded the data set of deuterium-to-hydrogen (D/H) ratios in methane on the KBOs Eris and Makemake, providing new insights into their origins. This study examines the elevated D/H ratios in methane on these KBOs in the context of protosolar nebula (PSN) dynamics and chemistry, proposing a primordial origin for the methane, in contrast to previous hypotheses suggesting abiotic production by internal heating. A time-dependent disk model coupled with a deuterium chemistry module was used to simulate the isotopic exchange between methane and hydrogen. Observational constraints, including the D/H ratio measured in methane in comet 67P/Churyumov─Gerasimenko, were used to refine the primordial D/H abundance. The simulations show that the observed D/H ratios in methane on Eris and Makemake are consistent with a primordial origin. The results suggest that the methane on these Kuiper Belt Objects likely originated from the PSN, similar to cometary methane, and was sequestered in solid form—either as pure condensates or clathrates—within its building blocks prior to accretion. These results provide a simple explanation for the high D/H ratios in methane on Eris and Makemake, without the need to invoke internal production mechanisms.",
+      "pub": "The Astrophysical Journal",
+      "date": "2025-04-01T00:00:00Z",
+      "year": "2025",
+      "month": "",
+      "doi": "10.3847/2041-8213/adc134"
+    },
+    {
+      "bibcode": "2024A&A...692A..10B",
+      "title": "Journey of complex organic molecules: Formation and transport in protoplanetary disks",
+      "author": [
+        "Benest Couzinou, T.",
+        "Mousis, O.",
+        "Danger, G.",
+        "Schneeberger, A.",
+        "Aguichine, A.",
+        "Bouquet, A."
+      ],
+      "abstract": "Context. Complex organic molecules serve as indicators of molecular diversity. Their detection on comets, planets, and moons has prompted inquiries into their origins, particularly the conditions conducive to their formation. One hypothesis suggests that the UV irradiation of icy grains in the protosolar nebula generates significant molecular complexity, a hypothesis supported by experiments on methanol ice irradiation. Aims. We investigated the irradiation of methanol ice particles as they migrate through the protosolar nebula. Our objective is to ascertain whether the encountered conditions facilitate the formation of complex organics molecules, and we leverage experimental data in our analysis. Methods. We developed a two-dimensional model that describes the transport of pebbles during the evolution of the protosolar nebula, employing a Lagrangian scheme. This model computes the interstellar UV flux received by the particles along their paths, which we compared with experimental values. Results. On average, particles ranging from 1 to 100 µm in size, released at a local temperature of 20 K, undergo adequate irradiation to attain the same molecular diversity as methanol ice during the experiments within timescales of 25 kyr of protosolar nebula evolution. In contrast, 1 cm sized particles require 911 kyr of irradiation to reach similar molecular diversity, making comparable molecular complexity unlikely. Similarly, particles ranging from 1 to 100 µm in size, released at a local temperature of 80 K, receive sufficient irradiation after 141 and 359 kyr. In contrast, 1 cm sized particles would require several million years to receive this level of irradiation, which is infeasible since they cross the iceline within approximately 500 kyr. Conclusions. The particles readily receive the irradiation dose necessary to generate the molecular diversity observed in the experiments within the outer regions of the disk. Our model, combined with future irradiation experiments, can provide additional insights into the specific regions where the building blocks of planets form.",
+      "pub": "Astronomy and Astrophysics",
+      "date": "2024-12-01T00:00:00Z",
+      "year": "2024",
+      "month": "",
+      "doi": "10.1051/0004-6361/202449499"
+    },
+    {
+      "bibcode": "2024PSJ.....5..173M",
+      "title": "Insights on the Formation Conditions of Uranus and Neptune from Their Deep Elemental Compositions",
+      "author": [
+        "Mousis, Olivier",
+        "Schneeberger, Antoine",
+        "Cavalié, Thibault",
+        "Mandt, Kathleen E.",
+        "Aguichine, Artyom",
+        "Lunine, Jonathan I.",
+        "Benest Couzinou, Tom",
+        "Hue, Vincent",
+        "Moreno, Raphaël"
+      ],
+      "abstract": "This study, placed in the context of the preparation for the Uranus Orbiter Probe mission, aims to predict the bulk volatile compositions of Uranus and Neptune. Using a protoplanetary disk model, it examines the evolution of trace species through vapor and solid transport as dust and pebbles. Due to the high carbon abundance found in their envelopes, the two planets are postulated to have formed at the carbon monoxide ice line within the protosolar nebula. The time evolution of the abundances of the major volatile species at the location of the CO ice line is then calculated to derive the abundance ratios of the corresponding key elements, including the heavy noble gases, in the feeding zones of Uranus and Neptune. Supersolar metallicity in their envelopes likely results from accreting solids in these zones. Two types of solids are considered: pure condensates (Case 1) and a mixture of pure condensates and clathrates (Case 2). The model, calibrated to observed carbon enrichments, predicts deep compositions. In Case 1, argon is deeply depleted, while nitrogen, oxygen, krypton, phosphorus, sulfur, and xenon are significantly enriched relative to their protosolar abundances in the two planets. Case 2 predicts significant enrichments for all species, including argon, relative to their protosolar abundances. Consequently, Case 1 predicts near-zero Ar/Kr or Ar/Xe ratios, while Case 2 suggests that these ratios are 0.1 and 0.5─1 times their protosolar ratios, respectively. Both cases predict a bulk sulfur-to-nitrogen ratio consistent with atmospheric measurements.",
+      "pub": "The Planetary Science Journal",
+      "date": "2024-08-01T00:00:00Z",
+      "year": "2024",
+      "month": "",
+      "doi": "10.3847/PSJ/ad58d8"
+    },
+    {
+      "bibcode": "2024SSRv..220...44M",
+      "title": "Recipes for Forming a Carbon-Rich Giant Planet",
+      "author": [
+        "Mousis, Olivier",
+        "Cavalié, Thibault",
+        "Lunine, Jonathan I.",
+        "Mandt, Kathleen E.",
+        "Hueso, Ricardo",
+        "Aguichine, Artyom",
+        "Schneeberger, Antoine",
+        "Benest Couzinou, Tom",
+        "Atkinson, David H.",
+        "Hue, Vincent",
+        "Hofstadter, Mark",
+        "Srisuchinwong, Udomlerd"
+      ],
+      "abstract": "The exploration of carbon-to-oxygen ratios has yielded intriguing insights into the composition of close-in giant exoplanets, giving rise to a distinct classification: carbon-rich planets, characterized by a carbon-to-oxygen ratio ≥ 1 in their atmospheres, as opposed to giant planets exhibiting carbon-to-oxygen ratios close to the protosolar value. In contrast, despite numerous space missions dispatched to the outer solar system and the proximity of Jupiter, Saturn, Uranus, and Neptune, our understanding of the carbon-to-oxygen ratio in these giants remains notably deficient. Determining this ratio is crucial as it serves as a marker linking a planet's volatile composition directly to its formation region within the disk. This article provides an overview of the current understanding of the carbon-to-oxygen ratio in the four gas giants of our solar system and explores why there is yet no definitive dismissal of the possibility that Jupiter, Saturn, Uranus, or Neptune could be considered carbon-rich planets. Additionally, we delve into the three primary formation scenarios proposed in existing literature to account for a bulk carbon-to-oxygen ratio ≥ 1 in a giant planet. A significant challenge lies in accurately inferring the bulk carbon-to-oxygen ratio of our solar system's gas giants. Retrieval methods involve integrating in situ measurements from entry probes equipped with mass spectrometers and remote sensing observations conducted at microwave wavelengths by orbiters. However, these methods fall short of fully discerning the deep carbon-to-oxygen abundance in the gas giants due to their limited probing depth, typically within the 10-100 bar range. To complement these direct measurements, indirect determinations rely on understanding the vertical distribution of atmospheric carbon monoxide in conjunction with thermochemical models. These models aid in evaluating the deep oxygen abundance in the gas giants, providing valuable insights into their overall composition.",
+      "pub": "Space Science Reviews",
+      "date": "2024-06-01T00:00:00Z",
+      "year": "2024",
+      "month": "",
+      "doi": "10.1007/s11214-024-01071-4"
+    }
+  ]
 }
