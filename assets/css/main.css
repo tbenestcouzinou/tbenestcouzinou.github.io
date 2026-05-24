@@ -2679,6 +2679,10 @@ input, select, textarea {
 			-webkit-flex-wrap: wrap;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
+			/* remove default list markers and spacing */
+			list-style: none;
+			margin: 0;
+			padding: 0;
 			gap: 1.25em;
 		}
 
@@ -2929,6 +2933,13 @@ input, select, textarea {
 				border-top: 0;
 				margin-top: 0;
 				padding-top: 0;
+			}
+
+			/* Ensure #one has no top border/margin/padding so landing looks like anchor */
+			#main > section#one {
+				border-top: 0 !important;
+				margin-top: 0 !important;
+				padding-top: 0 !important;
 			}
 
 /* === 11. Poptrox (lightbox) === */
