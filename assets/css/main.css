@@ -3034,6 +3034,11 @@ input, select, textarea {
 				scroll-margin-top: 6em;
 			}
 
+			/* Keep the Works heading visible when jumping to #two */
+			#main > section#two {
+				scroll-margin-top: 4em;
+			}
+
 /* === 11. Poptrox (lightbox) === */
 /* Poptrox */
 
