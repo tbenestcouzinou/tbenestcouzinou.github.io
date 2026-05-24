@@ -1,11 +1,38 @@
+/*
+ TOC (adapted):
+
+ 01. = Webfonts & Iconfonts
+ 02. = Document setup (resets, variables)
+ 03. = Basic / Typography / Container / Row
+ 04. = Section & Article styles
+ 05. = Forms (inputs, selects, checkboxes, radios)
+ 06. = UI Components (box, icon, image, list, icons, labeled-icons, actions, table, button)
+ 07. = Portfolio / Work Item
+ 08. = Header styles (menu-header, main-header, header, header-social)
+ 09. = Footer
+ 10. = Main content (#main) and sections (#one, #two) + Abstract wrappers
+ 11. = Poptrox (lightbox)
+ 12. = Utility / Touch styles
+ 13. = Responsive breakpoints (XLarge, Large, Medium, Small, XSmall)
+
+ Notes:
+ - Sections are grouped to match the current structure of this file.
+ - Use these markers to quickly locate rules; further subheadings exist throughout the stylesheet.
+
+ =================================================================== */
+
+/** 
+/* 01. =webfonts and iconfonts
+/* =================================================================== */
+
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
-/*
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+
+/** 
+/* 02. =document setup
+/* =================================================================== */
+
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -91,6 +118,7 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* === 03. Basic / Typography / Container / Row === */
 /* Basic */
 
 	html {
@@ -153,6 +181,8 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+	/* Typography
+	--------------------------------------------------------------------- */
 	h1, h2, h3, h4, h5, h6 {
 		color: #787878;
 		font-weight: 400;
@@ -260,6 +290,7 @@ input, select, textarea {
 		text-align: right;
 	}
 
+/* === 03.a Container === */
 /* Container */
 
 	.container {
@@ -309,6 +340,7 @@ input, select, textarea {
 
 		}
 
+/* === 03.b Row === */
 /* Row */
 
 	.row {
@@ -1777,6 +1809,7 @@ input, select, textarea {
 
 		}
 
+/* === 04. Section & Article styles === */
 /* Section/Article */
 
 	section.special, article.special {
@@ -1813,6 +1846,7 @@ input, select, textarea {
 		font-size: 2em;
 	}
 
+/* === 05. Forms (inputs, selects, checkboxes, radios) === */
 /* Form */
 
 	form {
@@ -1996,6 +2030,7 @@ input, select, textarea {
 		opacity: 1.0;
 	}
 
+/* === 06. UI Components: Box / Icon / Image / List / Icons / Labeled Icons / Actions / Table / Button === */
 /* Box */
 
 	.box {
@@ -2206,6 +2241,7 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
+/* === 06.a Icons / Labeled Icons / Actions / Table / Button === */
 /* Icons */
 
 	ul.icons {
@@ -2570,6 +2606,7 @@ input, select, textarea {
 			cursor: default;
 		}
 
+/* === 07. Portfolio / Work Item === */
 /* Work Item */
 
 	.work-item {
@@ -2591,11 +2628,12 @@ input, select, textarea {
 			margin: 0;
 		}
 
+/* === 08. Header styles (menu-header, main-header, header-social) === */
 /* Main Header */
 
 	#main-header {
-		background: rgba(255, 255, 255, 0.92);
-		border-bottom: solid 1px rgba(120, 120, 120, 0.12);
+		background: transparent;
+		border-bottom: none;
 		box-sizing: border-box;
 		color: #787878;
 		left: 35%;
@@ -2734,6 +2772,7 @@ input, select, textarea {
 			display: none;
 		}
 
+/* === 08.a Header responsive toggles === */
 /* Toggle original menu vs main header based on viewport
    - On desktop: hide the original `#menu-header` and show `#main-header` (fixed at top of main)
    - On mobile: show `#menu-header` and hide `#main-header` to keep original behaviour */
@@ -2752,6 +2791,7 @@ input, select, textarea {
 	}
 }
 
+/* === 08.b Header (side header #header) === */
 /* Header */
 
 	#header {
@@ -2820,6 +2860,7 @@ input, select, textarea {
 			width: 6.25em;
 		}
 
+/* === 09. Footer === */
 /* Footer */
 
 	#footer .icons {
@@ -2868,6 +2909,7 @@ input, select, textarea {
 				z-index: 2;
 			}
 
+/* === 10. Main content & sections (#main, #one, #two, abstracts) === */
 /* Main */
 
 	#main {
@@ -2889,6 +2931,7 @@ input, select, textarea {
 				padding-top: 0;
 			}
 
+/* === 11. Poptrox (lightbox) === */
 /* Poptrox */
 
 	@-moz-keyframes spin {
@@ -3146,6 +3189,7 @@ input, select, textarea {
 				opacity: 1.0;
 			}
 
+/* === 12. Touch / Utility styles === */
 /* Touch */
 
 	body.is-touch .image.thumb:before {
@@ -3167,6 +3211,7 @@ input, select, textarea {
 		opacity: 1.0 !important;
 	}
 
+/* === 13.a Breakpoints: XLarge === */
 /* XLarge */
 
 	@media screen and (max-width: 1800px) {
@@ -3179,6 +3224,7 @@ input, select, textarea {
 
 	}
 
+/* === 13.b Breakpoints: Large === */
 /* Large */
 
 	@media screen and (max-width: 1280px) {
@@ -3229,6 +3275,7 @@ input, select, textarea {
 
 	}
 
+/* === 13.c Breakpoints: Medium === */
 /* Medium */
 
 	@media screen and (max-width: 980px) {
@@ -3338,6 +3385,7 @@ input, select, textarea {
 
 	}
 
+/* === 13.d Breakpoints: Small === */
 /* Small */
 
 	@media screen and (max-width: 736px) {
@@ -3433,6 +3481,7 @@ input, select, textarea {
 
 	}
 
+/* === 13.e Breakpoints: XSmall === */
 /* XSmall */
 
 	@media screen and (max-width: 480px) {
