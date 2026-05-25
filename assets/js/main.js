@@ -149,6 +149,7 @@
 	// Works section: load ADS articles from JSON and render them once.
 		(function() {
 			var $worksList = $('#works-list');
+			var abstractIdCounter = 0;
 
 			if (!$worksList.length) {
 				return;
@@ -218,6 +219,11 @@
 				return 'https://ui.adsabs.harvard.edu/';
 			}
 
+			function nextAbstractId(prefix) {
+				abstractIdCounter += 1;
+				return prefix + abstractIdCounter;
+			}
+
 			function renderArticle(article) {
 				var title = firstText(article.title) || 'Untitled article';
 				var authors = Array.isArray(article.author) ? article.author.map(function(author) {
@@ -225,6 +231,8 @@
 				}).filter(Boolean).join(', ') : firstText(article.author);
 				var journal = firstText(article.pub) || 'ADS record';
 				var abstract = firstText(article.abstract) || 'Abstract unavailable in ADS.';
+				var previewId = nextAbstractId('AbstractPreview-');
+				var fullId = nextAbstractId('AbstractFull-');
 
 				var $article = $('<article>', {class: 'col-6 col-12-xsmall work-item'});
 				var $link = $('<a>', {
@@ -233,14 +241,29 @@
 					rel: 'noopener noreferrer'
 				}).text(title);
 				var $meta = $('<h4>', {class: 'work-meta'}).text(journal + ' · ' + formatDate(article.date));
-				var $toggle = $('<button>', {
-					type: 'button',
+				var $toggle = $('<div>', {
 					class: 'readmore-btn js-toggle-abstract',
+					role: 'button',
+					tabindex: 0,
+					'aria-controls': fullId,
 					'aria-expanded': 'false'
-				}).text('Read abstract');
+				});
+
+				$toggle.attr('data-full', '#' + fullId);
+				$toggle.attr('data-preview', '#' + previewId);
+				$toggle.attr('data-read-text', 'Read Abstract');
+				$toggle.attr('data-hide-text', 'Hide Abstract');
+				$toggle.text('Read Abstract');
 				var $wrapper = $('<div>', {class: 'text-wrapper'});
-				var $preview = $('<p>', {class: 'abstract-preview'}).text(previewText(abstract));
-				var $full = $('<p>', {class: 'abstract-full', hidden: true}).text(abstract);
+				var $preview = $('<p>', {
+					class: 'abstract-preview',
+					id: previewId
+				}).text(previewText(abstract));
+				var $full = $('<p>', {
+					class: 'abstract-full',
+					id: fullId,
+					hidden: true
+				}).text(abstract);
 
 				$article.append($link);
 				$article.append($('<h3>').text(authors || 'Author unavailable'));
@@ -260,15 +283,27 @@
 				event.preventDefault();
 
 				var $button = $(this);
-				var $workItem = $button.closest('.work-item');
-				var $preview = $workItem.find('.abstract-preview');
-				var $full = $workItem.find('.abstract-full');
+				var previewSelector = $button.attr('data-preview');
+				var fullSelector = $button.attr('data-full');
+				var readText = $button.attr('data-read-text') || 'Read abstract';
+				var hideText = $button.attr('data-hide-text') || 'Hide abstract';
+				var $preview = previewSelector ? $(previewSelector) : $button.closest('.work-item').find('.abstract-preview');
+				var $full = fullSelector ? $(fullSelector) : $button.closest('.work-item').find('.abstract-full');
 				var isHidden = $full.prop('hidden');
 
 				$full.prop('hidden', !isHidden);
 				$preview.prop('hidden', isHidden);
-				$button.text(isHidden ? 'Hide abstract' : 'Read abstract');
+				$button.text(isHidden ? hideText : readText);
 				$button.attr('aria-expanded', isHidden ? 'true' : 'false');
+			});
+
+			$(document).on('keydown', '.js-toggle-abstract', function(event) {
+				if (event.key !== 'Enter' && event.key !== ' ') {
+					return;
+				}
+
+				event.preventDefault();
+				$(this).trigger('click');
 			});
 
 			setLoadingMessage('Loading the latest ADS articles...');
