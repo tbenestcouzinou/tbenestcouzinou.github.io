@@ -3001,6 +3001,51 @@ input, select, textarea {
 			color: rgba(255, 255, 255, 0.4);
 		}
 
+		#footer .icons a.icon.fa-envelope:hover,
+		#footer .icons a.icon.fa-envelope:focus-visible {
+			color: #ffffff !important;
+		}
+
+		#footer .icons a.icon.fa-orcid:hover,
+		#footer .icons a.icon.fa-orcid:focus-visible {
+			color: #a6ce39 !important;
+		}
+
+		#footer .icons a.icon.fa-researchgate:hover,
+		#footer .icons a.icon.fa-researchgate:focus-visible {
+			color: #00ccbb !important;
+		}
+
+		#footer .icons a.icon.fa-linkedin:hover,
+		#footer .icons a.icon.fa-linkedin:focus-visible {
+			color: #0a66c2 !important;
+		}
+
+		#footer .icons a.ads-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 1.5em;
+			height: 1.5em;
+		}
+
+			#footer .icons a.ads-link img {
+				display: block;
+				width: 1.9em;
+				height: 1.9em;
+				transform: translateY(0.3em);
+				object-fit: contain;
+				filter: grayscale(1) brightness(0.95) contrast(1.15);
+				opacity: 0.6;
+				transition: filter 0.2s ease-in-out, opacity 0.2s ease-in-out;
+			}
+
+			#footer .icons a.ads-link:hover img,
+			#footer .icons a.ads-link:focus-visible img {
+				filter: none;
+				opacity: 1;
+			}
+
 	#footer .copyright {
 		color: rgba(255, 255, 255, 0.4);
 		font-size: 0.8em;
