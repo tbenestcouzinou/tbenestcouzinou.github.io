@@ -2623,6 +2623,13 @@ input, select, textarea {
 			margin: 0 0 0.5em 0;
 		}
 
+		.work-item .author-highlight {
+			background: rgba(46, 46, 255, 0.18);
+			border-radius: 0.2em;
+			font-weight: 600;
+			padding: 0 0.2em;
+		}
+
 		.work-item .work-meta {
 			font-size: 0.82em;
 			line-height: 1.5em;

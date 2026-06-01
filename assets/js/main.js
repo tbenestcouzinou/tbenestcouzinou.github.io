@@ -224,11 +224,46 @@
 				return prefix + abstractIdCounter;
 			}
 
+			function normalizeAuthorName(value) {
+				return firstText(value)
+					.toLowerCase()
+					.normalize('NFD')
+					.replace(/[\u0300-\u036f]/g, '')
+					.replace(/[^a-z0-9]+/g, ' ')
+					.trim();
+			}
+
+			function isHighlightedAuthor(value) {
+				var normalized = normalizeAuthorName(value);
+				return normalized.indexOf('benest couzinou') !== -1 && (normalized.indexOf(' tom') !== -1 || /\bt\b/.test(normalized));
+			}
+
+			function buildAuthorsHeading(authorValue) {
+				var authors = Array.isArray(authorValue) ? authorValue.map(function(author) {
+					return firstText(author);
+				}).filter(Boolean) : [firstText(authorValue)].filter(Boolean);
+				var $heading = $('<h3>');
+
+				if (!authors.length) {
+					$heading.text('Author unavailable');
+					return $heading;
+				}
+
+				authors.forEach(function(author, index) {
+					if (index > 0) {
+						$heading.append(document.createTextNode(', '));
+					}
+
+					$heading.append($('<span>', {
+						class: isHighlightedAuthor(author) ? 'author-highlight' : ''
+					}).text(author));
+				});
+
+				return $heading;
+			}
+
 			function renderArticle(article) {
 				var title = firstText(article.title) || 'Untitled article';
-				var authors = Array.isArray(article.author) ? article.author.map(function(author) {
-					return firstText(author);
-				}).filter(Boolean).join(', ') : firstText(article.author);
 				var journal = firstText(article.pub) || 'ADS record';
 				var abstract = firstText(article.abstract) || 'Abstract unavailable in ADS.';
 				var previewId = nextAbstractId('AbstractPreview-');
@@ -266,7 +301,7 @@
 				}).text(abstract);
 
 				$article.append($link);
-				$article.append($('<h3>').text(authors || 'Author unavailable'));
+				$article.append(buildAuthorsHeading(article.author));
 				$article.append($meta);
 				$wrapper.append($preview, $full);
 				$article.append($toggle);
