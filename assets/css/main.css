@@ -2624,10 +2624,7 @@ input, select, textarea {
 		}
 
 		.work-item .author-highlight {
-			background: rgba(46, 46, 255, 0.18);
-			border-radius: 0.2em;
-			font-weight: 600;
-			padding: 0 0.2em;
+			font-weight: 700;
 		}
 
 		.work-item .work-meta {
