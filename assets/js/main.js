@@ -200,10 +200,12 @@
 					return firstText(value) || 'Date unavailable';
 				}
 
-				return new Intl.DateTimeFormat('en-GB', {
-					month: 'long',
-					year: 'numeric'
-				}).format(parsedDate);
+				var monthNames = [
+					'January', 'February', 'March', 'April', 'May', 'June',
+					'July', 'August', 'September', 'October', 'November', 'December'
+				];
+
+				return monthNames[parsedDate.getMonth()] + ' ' + parsedDate.getFullYear();
 			}
 
 			function pickUrl(article) {
