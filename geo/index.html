@@ -101,7 +101,7 @@
 				<header class="major">
 					<h2>Historique des scores</h2>
 				</header>
-				<p id="scores-status">Chargement des données depuis ../data/scores.json...</p>
+				<p id="scores-status">Chargement des données</p>
 				<div class="table-wrapper">
 					<table class="scores-table" aria-describedby="scores-status">
 						<thead>
@@ -336,7 +336,7 @@
 						tbody.appendChild(buildRow(entry));
 					});
 
-					status.textContent = rows.length + ' quiz(s) affiché(s) depuis ' + entries.source + '.';
+					status.textContent = rows.length + ' quiz(s) affiché(s)' + '.';
 				})
 				.catch(function () {
 					showError('Impossible de charger /data/scores.json.');
