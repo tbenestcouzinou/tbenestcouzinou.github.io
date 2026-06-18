@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: '24'
-          
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Run scraper
         run: |
-          python script/update_score.py
+          python scripts/update_score.py
 
       - name: Commit updated data
         run: |
