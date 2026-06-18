@@ -167,14 +167,18 @@ for quiz, URL in URLS.items():
 
     for i, old in enumerate(history):
 
-        if old["date"] == today and old['quiz'] == quiz:
+        if old["date"] == today and old['quiz'] == quiz:    # Meme jour et meme quiz
             
             old_scores = old["scores"]
 
             for player in daily_scores:
 
                 new_score = daily_scores[player]["score"]
-                old_score = old_scores.get(player, {}).get("score")
+                old_score = (
+                                old_scores
+                                .get(player, {})
+                                .get("score")
+                            )
 
                 if (    old_score is None
                         or (
@@ -183,16 +187,55 @@ for quiz, URL in URLS.items():
                         ) ):
 
                     old_scores[player] = daily_scores[player]
-                    old_scores[date] = daily_scores[date]
 
-                history[i]["scores"] = old_scores
+            history[i]["scores"] = old_scores
 
-                replace = True
+        replace = True
 
-                break
+        break
 
     if not replace:
         history.append(entry)
+
+        keep = False
+
+        for player in daily_scores:
+
+            new_score = daily_scores[player]["score"]
+
+            best = None
+
+            # Recherche du meilleur score historique
+            for old in history:
+
+                if old["quiz"] != quiz:
+                    continue
+
+                if player in old["scores"]:
+
+                    score = old["scores"][player]["score"]
+
+                    if (
+                        score is not None
+                        and (
+                            best is None
+                            or score > best
+                        )
+                    ):
+                        best = score
+
+            # Ajouter seulement si record battu
+            if (
+                new_score is not None
+                and (
+                    best is None
+                    or new_score > best
+                )
+            ):
+                keep = True
+
+        if keep:
+            history.append(entry)
 
     # ==========================
     # SAVE
