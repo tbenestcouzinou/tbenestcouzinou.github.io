@@ -1,0 +1,44 @@
+[
+    {
+        "date": "18/06/2026",
+        "quiz": "Le Monde vu du ciel - Junior",
+        "scores": {
+            "alizouilleam": {
+                "score": null,
+                "date": null
+            },
+            "Araw Igum": {
+                "score": null,
+                "date": null
+            }
+        }
+    },
+    {
+        "date": "18/06/2026",
+        "quiz": "Le Monde vu du ciel",
+        "scores": {
+            "alizouilleam": {
+                "score": 32633,
+                "date": "2026-06-17 16:25:23"
+            },
+            "Araw Igum": {
+                "score": null,
+                "date": null
+            }
+        }
+    },
+    {
+        "date": "18/06/2026",
+        "quiz": "Le Monde vu du ciel - Expert",
+        "scores": {
+            "alizouilleam": {
+                "score": 42328,
+                "date": "2026-06-17 16:22:47"
+            },
+            "Araw Igum": {
+                "score": 40705,
+                "date": "2026-06-15 06:03:46"
+            }
+        }
+    }
+]

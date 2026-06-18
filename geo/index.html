@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+
+		<!--- basic page needs
+		================================================== -->
+		<title>Scores des quiz</title>
+		<meta charset="utf-8" />
+		<meta name="robots" content="noindex, nofollow" />
+
+		<!-- mobile specific metas
+		================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- CSS
+		================================================== -->
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<style>
+			#main .scores-table {
+				border-collapse: collapse;
+				border: solid 1px #efefef;
+			}
+
+			#main .scores-table th,
+			#main .scores-table td {
+				border: solid 1px #efefef;
+			}
+
+			#main .scores-table thead th {
+				border-bottom-width: 2px;
+			}
+
+			body.dark-mode #main .scores-table th,
+			body.dark-mode #main .scores-table td {
+				border-color: #2f2f2f;
+			}
+
+			body.dark-mode #main .scores-table {
+				border-color: #2f2f2f;
+			}
+		</style>
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Menu header
+		================================================== -->
+		<header id="menu-header">
+			<div class="mobile-menu">
+				<div class="mobile-nav-panel">
+					<button type="button" class="darkmode-toggle mobile-darkmode" data-theme-toggle aria-label="Enable dark mode">
+						<span class="icon solid fa-moon" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<!-- Side Header -->
+		<header id="header">
+			<div class="inner">
+				<a href="#" class="image avatar"><img src="../images/avatar.jpg" alt="" /></a>
+				<h1><strong>Scores jeux-geographique</strong><br />
+			</div>
+		</header>
+
+		<!-- Main -->
+		<div id="main">
+
+			<header id="main-header">
+				<div class="row">
+					<div class="col-12">
+						<ul class="header-darkmode">
+							<li>
+								<button type="button" class="darkmode-toggle" data-theme-toggle aria-label="Enable dark mode">
+									<span class="icon solid fa-moon" aria-hidden="true"></span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</header>
+
+			<section id="scores">
+				<header class="major">
+					<h2>Historique des scores</h2>
+				</header>
+				<p id="scores-status">Chargement des données depuis ../data/scores.json...</p>
+				<div class="table-wrapper">
+					<table class="scores-table" aria-describedby="scores-status">
+						<thead>
+							<tr>
+								<th scope="col">Quiz</th>
+								<th scope="col">alizouilleam</th>
+								<th scope="col">Araw Igum</th>
+							</tr>
+						</thead>
+						<tbody id="scores-body"></tbody>
+					</table>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<ul class="icons">
+					<li><a href="mailto:tom.benest@ustc.edu.cn" class="icon solid fa-envelope"><span class="label">mail</span></a></li>
+					<li><a href="https://ui.adsabs.harvard.edu/search/filter_property_fq_property=AND&filter_property_fq_property=property%3A%22refereed%22&fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq=%7B!type%3Daqp%20v%3D%24fq_property%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&fq_property=(property%3A%22refereed%22)&q=%20author%3A%22Benest%20Couzinou%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" class="ads-link" aria-label="ADS"><img src="../images/ADS_logo.svg" alt="" aria-hidden="true" /></a></li>
+					<li><a href="https://orcid.org/0000-0002-8719-7867" class="icon brands fa-orcid"><span class="label">ORCID</span></a></li>
+					<li><a href="https://www.researchgate.net/profile/Tom-Benest-Couzinou" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
+					<li><a href="https://www.linkedin.com/in/tom-benest-69709b201/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; ESA/Webb, NASA & CSA, Tazaki et al.</li>
+				</ul>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.poptrox.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script>
+		(function () {
+			var status = document.getElementById('scores-status');
+			var tbody = document.getElementById('scores-body');
+			var scoreSources = [
+				new URL('../data/scores.json', window.location.href).toString(),
+				new URL('/data/scores.json', window.location.origin || window.location.href).toString(),
+				'../data/scores.json',
+				'/data/scores.json'
+			];
+
+			function parseScore(value) {
+				if (value === null || value === undefined || value === '') {
+					return '—';
+				}
+
+				return String(value);
+			}
+
+			function parseEntryDate(value) {
+				if (!value) {
+					return new Date(0);
+				}
+
+				var parts = String(value).split('/');
+
+				if (parts.length !== 3) {
+					return new Date(value);
+				}
+
+				return new Date(parts[2] + '-' + parts[1] + '-' + parts[0]);
+			}
+
+			function buildRow(entry) {
+				var row = document.createElement('tr');
+				var quizCell = document.createElement('td');
+				var firstScoreCell = document.createElement('td');
+				var secondScoreCell = document.createElement('td');
+
+				quizCell.textContent = entry.quiz || 'Quiz inconnu';
+				firstScoreCell.textContent = parseScore(entry.scores && entry.scores['alizouilleam'] && entry.scores['alizouilleam'].score);
+				secondScoreCell.textContent = parseScore(entry.scores && entry.scores['Araw Igum'] && entry.scores['Araw Igum'].score);
+
+				row.appendChild(quizCell);
+				row.appendChild(firstScoreCell);
+				row.appendChild(secondScoreCell);
+				return row;
+			}
+
+			function showError(message) {
+				status.textContent = message;
+				tbody.innerHTML = '';
+			}
+
+			if (!window.fetch) {
+				showError('Le navigateur ne prend pas en charge le chargement automatique des scores.');
+				return;
+			}
+
+			function fetchFromSources(index) {
+				if (index >= scoreSources.length) {
+					throw new Error('No score source available');
+				}
+
+				var source = scoreSources[index];
+
+				return fetch(source, { cache: 'no-store' })
+					.then(function (response) {
+						if (!response.ok) {
+							throw new Error('HTTP ' + response.status);
+						}
+
+						return response.json();
+					})
+					.then(function (entries) {
+						return {
+							source: source,
+							entries: entries
+						};
+					})
+					.catch(function () {
+						return fetchFromSources(index + 1);
+					});
+			}
+
+			fetchFromSources(0)
+				.then(function (entries) {
+					var rows = Array.isArray(entries.entries) ? entries.entries.slice() : [];
+
+					rows.sort(function (left, right) {
+						return parseEntryDate(right.date) - parseEntryDate(left.date);
+					});
+
+					tbody.innerHTML = '';
+
+					rows.forEach(function (entry) {
+						tbody.appendChild(buildRow(entry));
+					});
+
+					status.textContent = rows.length + ' entrée(s) chargée(s) depuis ' + entries.source + '.';
+				})
+				.catch(function () {
+					showError('Impossible de charger /data/scores.json.');
+				});
+		})();
+		</script>
+
+	</body>
+</html>
