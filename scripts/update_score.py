@@ -168,12 +168,28 @@ for quiz, URL in URLS.items():
     for i, old in enumerate(history):
 
         if old["date"] == today and old['quiz'] == quiz:
+            
+            old_scores = old["scores"]
 
-            history[i] = entry
+            for player in daily_scores:
 
-            replace = True
+                new_score = daily_scores[player]["score"]
+                old_score = old_scores.get(player, {}).get("score")
 
-            break
+                if (    old_score is None
+                        or (
+                            new_score is not None
+                            and new_score > old_score
+                        ) ):
+
+                    old_scores[player] = daily_scores[player]
+                    old_scores[date] = daily_scores[date]
+
+                history[i]["scores"] = old_scores
+
+                replace = True
+
+                break
 
     if not replace:
         history.append(entry)
