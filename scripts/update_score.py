@@ -9,9 +9,27 @@ from datetime import datetime
 # CONFIGURATION
 # ==========================
 
-URLS = {"Le Monde vu du ciel" : "https://www.jeux-geographiques.com/jeux-en-ligne-Le-Monde-vu-du-ciel-_pageid596.html",
+URLS = {"Pays d'Europe" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Europe-_pageid160.html",
+        "Pays de l'Union Européenne" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Pays-de-l-Union-Europeenne-_pageid260.html",
+        "Villes du Monde" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Villes-du-Monde-_pageid47.html",
+        "Villes du Monde Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Villes-du-Monde-Junior-_pageid185.html",
+        "Pays d'Afrique" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Afrique-_pageid158.html",
+        "Pays du Moyen-Orient" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-du-Moyen-Orient-Caucase-et-Asie-centrale-_pageid163.html",
+        "Pays d'Amérique Centrale" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Amerique-Centrale-_pageid156.html",
+        "Pays d'Amérique du Sud" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Amerique-du-Sud-_pageid162.html",
+        "Pays d'Asie" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Asie-_pageid161.html",
+        "Pays de l'hémisphère Nord" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Pays-de-l-hemisphere-Nord-_pageid396.html",
+        "Les Pays vus du Ciel" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Les-Pays-vus-du-Ciel-_pageid604.html",
+        "Les Pays vus du Ciel - Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Les-Pays-vus-du-Ciel-Junior-_pageid605.html",
+        "Les Pays vus du Ciel - Expert" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Les-Pays-vus-du-Ciel-Expert-_pageid606.html",
+        "Quel est ce pays ?" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Quiz-Quel-est-ce-pays-_pageid485.html",
+        "Quel est ce pays ? - Expert" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Quel-est-ce-pays-Expert-_pageid557.html",
+        "Le Monde vu du ciel" : "https://www.jeux-geographiques.com/jeux-en-ligne-Le-Monde-vu-du-ciel-_pageid596.html",
         "Le Monde vu du ciel - Expert" : "https://www.jeux-geographiques.com/jeux-en-ligne-Le-Monde-vu-du-ciel-Expert-_pageid598.html",
-        "Le Monde vu du ciel - Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Le-Monde-vu-du-ciel-Junior-_pageid597.html"
+        "Le Monde vu du ciel - Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Le-Monde-vu-du-ciel-Junior-_pageid597.html",
+        "Géo. Physique du Monde" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Geo-Physique-du-Monde-_pageid121.html",
+        "Géo. Physique du Monde - Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Geo-Physique-du-Monde-Junior-_pageid117.html"
+        
 }
 
 PLAYERS = [
