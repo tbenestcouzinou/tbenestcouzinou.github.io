@@ -191,9 +191,9 @@ for quiz, URL in URLS.items():
 
             history[i]["scores"] = old_scores
 
-        replace = True
+            replace = True
 
-        break
+            break
 
     if not replace:
         history.append(entry)
