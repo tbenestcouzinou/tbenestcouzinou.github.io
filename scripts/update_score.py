@@ -14,6 +14,7 @@ URLS = {"Pays d'Europe" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu
         "Pays de l'Union Européenne" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Pays-de-l-Union-Europeenne-_pageid260.html",
         "Villes du Monde" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Villes-du-Monde-_pageid47.html",
         "Villes du Monde Junior" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Villes-du-Monde-Junior-_pageid185.html",
+        "Villes du Monde Expert" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Villes-du-Monde-Expert-_pageid358.html",
         "Pays d'Afrique" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Afrique-_pageid158.html",
         "Pays du Moyen-Orient" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-du-Moyen-Orient-Caucase-et-Asie-centrale-_pageid163.html",
         "Pays d'Amérique Centrale" :  "https://www.jeux-geographiques.com/jeux-en-ligne-Jeu-Pays-d-Amerique-Centrale-_pageid156.html",
