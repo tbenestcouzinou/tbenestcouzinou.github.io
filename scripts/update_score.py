@@ -196,7 +196,6 @@ for quiz, URL in URLS.items():
             break
 
     if not replace:
-        history.append(entry)
 
         keep = False
 
