@@ -362,5 +362,33 @@
                 "date": "2026-06-22 11:00:07"
             }
         }
+    },
+    {
+        "date": "30/06/2026",
+        "quiz": "Géo. Physique du Monde",
+        "scores": {
+            "alizouilleam": {
+                "score": 210538,
+                "date": "2026-06-30 16:02:36"
+            },
+            "Araw Igum": {
+                "score": 206102,
+                "date": "2026-06-20 12:24:52"
+            }
+        }
+    },
+    {
+        "date": "30/06/2026",
+        "quiz": "Géo. Physique du Monde - Junior",
+        "scores": {
+            "alizouilleam": {
+                "score": 229400,
+                "date": "2026-06-30 14:36:07"
+            },
+            "Araw Igum": {
+                "score": 224655,
+                "date": "2026-06-16 05:56:14"
+            }
+        }
     }
 ]
