@@ -390,5 +390,19 @@
                 "date": "2026-06-16 05:56:14"
             }
         }
+    },
+    {
+        "date": "01/07/2026",
+        "quiz": "Géo. Physique du Monde",
+        "scores": {
+            "alizouilleam": {
+                "score": 210538,
+                "date": "2026-06-30 16:02:36"
+            },
+            "Araw Igum": {
+                "score": 216282,
+                "date": "2026-07-01 11:10:10"
+            }
+        }
     }
 ]
