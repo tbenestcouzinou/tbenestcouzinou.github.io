@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T08:34:52.296Z",
+  "generatedAt": "2026-07-01T07:11:41.410Z",
   "query": "author:\"Benest Couzinou\" AND property:refereed AND (database:astronomy OR database:physics)",
   "count": 6,
   "articles": [
