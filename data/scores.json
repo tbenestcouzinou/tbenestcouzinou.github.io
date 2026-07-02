@@ -404,5 +404,61 @@
                 "date": "2026-07-01 11:10:10"
             }
         }
+    },
+    {
+        "date": "02/07/2026",
+        "quiz": "Pays d'Afrique",
+        "scores": {
+            "alizouilleam": {
+                "score": 185073,
+                "date": "2026-07-02 16:59:49"
+            },
+            "Araw Igum": {
+                "score": null,
+                "date": null
+            }
+        }
+    },
+    {
+        "date": "02/07/2026",
+        "quiz": "Le Monde vu du ciel",
+        "scores": {
+            "alizouilleam": {
+                "score": 32904,
+                "date": "2026-07-02 16:35:03"
+            },
+            "Araw Igum": {
+                "score": 32651,
+                "date": "2026-06-19 06:10:35"
+            }
+        }
+    },
+    {
+        "date": "02/07/2026",
+        "quiz": "Le Monde vu du ciel - Expert",
+        "scores": {
+            "alizouilleam": {
+                "score": 43264,
+                "date": "2026-07-02 10:51:06"
+            },
+            "Araw Igum": {
+                "score": 43487,
+                "date": "2026-06-19 11:46:19"
+            }
+        }
+    },
+    {
+        "date": "02/07/2026",
+        "quiz": "Géo. Physique du Monde",
+        "scores": {
+            "alizouilleam": {
+                "score": 210538,
+                "date": "2026-06-30 16:02:36"
+            },
+            "Araw Igum": {
+                "score": 223544,
+                "date": "2026-07-02 11:12:32"
+            }
+        }
     }
 ]
