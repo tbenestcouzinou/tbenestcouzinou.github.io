@@ -460,5 +460,61 @@
                 "date": "2026-07-02 11:12:32"
             }
         }
+    },
+    {
+        "date": "03/07/2026",
+        "quiz": "Pays d'Afrique",
+        "scores": {
+            "alizouilleam": {
+                "score": 185073,
+                "date": "2026-07-02 16:59:49"
+            },
+            "Araw Igum": {
+                "score": 185738,
+                "date": "2026-07-03 08:59:42"
+            }
+        }
+    },
+    {
+        "date": "03/07/2026",
+        "quiz": "Pays d'Asie",
+        "scores": {
+            "alizouilleam": {
+                "score": 172369,
+                "date": "2026-07-03 14:26:44"
+            },
+            "Araw Igum": {
+                "score": 169418,
+                "date": "2026-06-08 05:18:07"
+            }
+        }
+    },
+    {
+        "date": "03/07/2026",
+        "quiz": "Géo. Physique du Monde",
+        "scores": {
+            "alizouilleam": {
+                "score": 210538,
+                "date": "2026-06-30 16:02:36"
+            },
+            "Araw Igum": {
+                "score": 230468,
+                "date": "2026-07-03 05:16:46"
+            }
+        }
+    },
+    {
+        "date": "03/07/2026",
+        "quiz": "Géo. Physique du Monde - Junior",
+        "scores": {
+            "alizouilleam": {
+                "score": 229400,
+                "date": "2026-06-30 14:36:07"
+            },
+            "Araw Igum": {
+                "score": 235783,
+                "date": "2026-07-03 05:53:41"
+            }
+        }
     }
 ]
