@@ -530,5 +530,19 @@
                 "date": "2026-07-04 07:24:05"
             }
         }
+    },
+    {
+        "date": "06/07/2026",
+        "quiz": "Le Monde vu du ciel",
+        "scores": {
+            "alizouilleam": {
+                "score": 32904,
+                "date": "2026-07-02 16:35:03"
+            },
+            "Araw Igum": {
+                "score": 33188,
+                "date": "2026-07-06 10:40:37"
+            }
+        }
     }
 ]
