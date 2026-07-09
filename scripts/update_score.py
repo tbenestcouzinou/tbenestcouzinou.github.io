@@ -76,56 +76,58 @@ for quiz, URL in URLS.items():
 
     daily_scores = {}
 
-    hiscores = soup.find("div", id="hiscores_month")
+    for category in ["hiscores_week"]: #"hiscores_month", "hiscores_day"
 
-    rows = hiscores.find_all("tr")
+        hiscores = soup.find("div", id=category)
 
-    for player in PLAYERS:
+        rows = hiscores.find_all("tr")
 
-        score = None
-        date = None
+        for player in PLAYERS:
 
-        for row in rows:
+            score = None
+            date = None
 
-            name_cell = row.find("td", class_="name")
-            score_cell = row.find("td", class_="score")
+            for row in rows:
 
-            if name_cell is None or score_cell is None:
-                continue
+                name_cell = row.find("td", class_="name")
+                score_cell = row.find("td", class_="score")
 
-            # ---- Extract username ----
-            name_tag = name_cell.find("a", class_="login_link")
+                if name_cell is None or score_cell is None:
+                    continue
 
-            if name_tag is None:
-                continue
+                # ---- Extract username ----
+                name_tag = name_cell.find("a", class_="login_link")
 
-            name = name_tag.get_text(strip=True)
+                if name_tag is None:
+                    continue
 
-            if name.lower() != player.lower():
-                continue
+                name = name_tag.get_text(strip=True)
 
-            # ---- Extract score ----
-            score_tag = score_cell.find("a")
+                if name.lower() != player.lower():
+                    continue
 
-            if score_tag is None:
-                continue
+                # ---- Extract score ----
+                score_tag = score_cell.find("a")
 
-            score_text = score_tag.get_text(strip=True)
+                if score_tag is None:
+                    continue
 
-            try:
-                score = int(score_text)
-            except:
-                score = None
+                score_text = score_tag.get_text(strip=True)
 
-            # ---- Extract date from title ----
-            date = score_tag.get("title", None)
+                try:
+                    score = int(score_text)
+                except:
+                    score = None
 
-            break
+                # ---- Extract date from title ----
+                date = score_tag.get("title", None)
 
-        daily_scores[player] = {
-            "score": score,
-            "date": date
-        }
+                break
+
+            daily_scores[player] = {
+                "score": score,
+                "date": date
+            }
 
     # ==========================
     # LOAD HISTORY
