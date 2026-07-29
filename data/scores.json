@@ -586,5 +586,19 @@
                 "date": null
             }
         }
+    },
+    {
+        "date": "29/07/2026",
+        "quiz": "Quel est ce pays ? - Expert",
+        "scores": {
+            "alizouilleam": {
+                "score": 42020,
+                "date": "2026-07-23 15:08:36"
+            },
+            "Araw Igum": {
+                "score": 42233,
+                "date": "2026-07-29 09:03:57"
+            }
+        }
     }
 ]
