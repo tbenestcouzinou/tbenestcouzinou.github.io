@@ -614,5 +614,19 @@
                 "date": null
             }
         }
+    },
+    {
+        "date": "31/07/2026",
+        "quiz": "Les Pays vus du Ciel - Expert",
+        "scores": {
+            "alizouilleam": {
+                "score": 44348,
+                "date": "2026-07-30 15:36:01"
+            },
+            "Araw Igum": {
+                "score": 45637,
+                "date": "2026-07-31 10:22:47"
+            }
+        }
     }
 ]
