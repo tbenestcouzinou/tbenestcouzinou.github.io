@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-01T05:53:51.857Z",
+  "generatedAt": "2026-09-01T08:19:43.080Z",
   "query": "author:\"Benest Couzinou\" AND property:refereed AND (database:astronomy OR database:physics)",
   "count": 6,
   "articles": [
@@ -45,7 +45,7 @@
         "Schneeberger, Antoine"
       ],
       "abstract": "Deuterium, a heavy isotope of hydrogen, is a key tracer of the formation of the solar system. Recent James Webb Space Telescope observations have expanded the data set of deuterium-to-hydrogen (D/H) ratios in methane on the KBOs Eris and Makemake, providing new insights into their origins. This study examines the elevated D/H ratios in methane on these KBOs in the context of protosolar nebula (PSN) dynamics and chemistry, proposing a primordial origin for the methane, in contrast to previous hypotheses suggesting abiotic production by internal heating. A time-dependent disk model coupled with a deuterium chemistry module was used to simulate the isotopic exchange between methane and hydrogen. Observational constraints, including the D/H ratio measured in methane in comet 67P/Churyumov─Gerasimenko, were used to refine the primordial D/H abundance. The simulations show that the observed D/H ratios in methane on Eris and Makemake are consistent with a primordial origin. The results suggest that the methane on these Kuiper Belt Objects likely originated from the PSN, similar to cometary methane, and was sequestered in solid form—either as pure condensates or clathrates—within its building blocks prior to accretion. These results provide a simple explanation for the high D/H ratios in methane on Eris and Makemake, without the need to invoke internal production mechanisms.",
-      "pub": "The Astrophysical Journal",
+      "pub": "The Astrophysical Journal Letters",
       "date": "2025-04-01T00:00:00Z",
       "year": "2025",
       "month": "",
