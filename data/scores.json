@@ -642,5 +642,19 @@
                 "date": null
             }
         }
+    },
+    {
+        "date": "07/09/2026",
+        "quiz": "Pays d'Europe",
+        "scores": {
+            "alizouilleam": {
+                "score": 182909,
+                "date": "2026-09-04 15:41:34"
+            },
+            "Araw Igum": {
+                "score": null,
+                "date": null
+            }
+        }
     }
 ]
