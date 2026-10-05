@@ -2,7 +2,7 @@ name: Daily Scores Update
 
 on:
   schedule:
-    - cron: "0 20 * * 1"  # Le lundi à 8h Chine = 2h Paris
+    - cron: "0 20 28 * 1"  # Le lundi à 8h Chine = 2h Paris
   workflow_dispatch:
 
 permissions:
