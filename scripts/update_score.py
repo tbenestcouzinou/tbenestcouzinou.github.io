@@ -57,7 +57,8 @@ for quiz, URL in URLS.items():
         "Mozilla/5.0"
     }
 
-    response = requests.get(URL, headers=headers)
+    response = requests.get(URL, headers=headers, timeout=90)
+    response.raise_for_status()
 
     if response.status_code != 200:
         raise Exception(
@@ -76,58 +77,82 @@ for quiz, URL in URLS.items():
 
     daily_scores = {}
 
-    for category in ["hiscores_week"]: #"hiscores_month", "hiscores_day"
+    # Prefer the daily leaderboard, then fall back to weekly and monthly.
+    for player in PLAYERS:
+            # Initialize the player's result before checking the available leaderboards.
+        daily_scores[player] = {"score": None, "date": None}
+        score = None
+        date = None
+        # Check each leaderboard in priority order.  A player's monthly score
+        # must not replace a score already found in the daily leaderboard.
+        for category in ["hiscores_month"]: #"hiscores_day", "hiscores_week", 
+            found = False
+            hiscores = soup.find("div", id=category)
+            if hiscores is None:
+                continue
 
-        hiscores = soup.find("div", id=category)
-
-        rows = hiscores.find_all("tr")
-
-        for player in PLAYERS:
-
-            score = None
-            date = None
-
+            # Get every table row contained in the selected leaderboard.
+            rows = hiscores.find_all("tr")
+            # Inspect each row until the current player is found.
             for row in rows:
-
+                    # Find the cells containing the player's name and score.
                 name_cell = row.find("td", class_="name")
                 score_cell = row.find("td", class_="score")
 
+                    # Ignore rows that do not contain both required cells.
                 if name_cell is None or score_cell is None:
                     continue
 
-                # ---- Extract username ----
+                    # Find the link containing the player's displayed username.
                 name_tag = name_cell.find("a", class_="login_link")
 
+                    # A missing score link means this row cannot be used.
                 if name_tag is None:
                     continue
 
-                name = name_tag.get_text(strip=True)
+                    # get_text() extracts the visible text; strip=True removes surrounding whitespace.
+                name = name_tag.get_text(strip=True)    #Extract player's name
 
+                    # Compare names
                 if name.lower() != player.lower():
                     continue
 
                 # ---- Extract score ----
+                    # Find the link containing the score value.
                 score_tag = score_cell.find("a")
 
+                    # A missing score link means this row cannot be used.
                 if score_tag is None:
                     continue
 
+                    # Read and clean the score text before converting it to an integer.
                 score_text = score_tag.get_text(strip=True)
 
                 try:
+                        # Convert the extracted score from text to a number.
                     score = int(score_text)
-                except:
+                except ValueError:
+                        # Keep the score unavailable if the text is not a valid integer.
                     score = None
 
                 # ---- Extract date from title ----
+                    # get() reads the HTML title attribute, or returns None if it is absent.
                 date = score_tag.get("title", None)
 
+                    # The matching player was found, so no more rows need to be checked.
                 break
 
-            daily_scores[player] = {
-                "score": score,
-                "date": date
-            }
+            if score is not None:
+                # Store the score and date found in the current leaderboard.
+                daily_scores[player] = {
+                    "score": score,
+                    "date": date
+                }
+                found = True
+
+            #If the new score is found, we skip to another player
+            if found:
+                break
 
     # ==========================
     # LOAD HISTORY
